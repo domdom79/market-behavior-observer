@@ -1,3 +1,8 @@
+> **TL;DR**  
+> Research-only market analytics engine focused on post-event behavior, reversals, and regime analysis.  
+> No execution, no prediction, no strategy disclosure.  
+> Designed for human-in-the-loop research, governance-safe environments, and proprietary system integration.
+
 # Market Behavior Observer
 Research-Only Market Analysis System
 
@@ -27,7 +32,19 @@ Research-Only Market Analysis System
 - [References](#references)
 
 ## Overview
-Market Behavior Observer is a non-executing, research-focused system designed to observe, analyze, and track market behavior following anonymized events. The project demonstrates market observation architecture, event detection patterns, and persistent statistical aggregation for human-guided analysis—without executing trades, providing trading advice, or implementing autonomous optimization.
+Market Behavior Observer is a non-executing, research-focused system designed to observe, analyze, and track market behavior following abstracted, structure-based market events. The project demonstrates market observation architecture, event detection patterns, and persistent statistical aggregation for human-guided analysis—without executing trades, providing trading advice, or implementing autonomous optimization.
+
+### Executive Summary
+
+Market Behavior Observer is a research-grade analytics engine designed to study **what happens after market signals or structural events occur**, rather than to predict prices or automate trading.
+
+The system focuses on:
+- post-event market behavior,
+- signal outcome quality,
+- reversal frequency and depth,
+- regime-dependent behavior across timeframes.
+
+It is intended as a **decision-support and research tool** for traders, quants, and analysts who need empirical insight into how markets actually behave after signals appear, without exposing or executing proprietary strategies.
 
 ## Safety & Intellectual Property Notice
 This repository is a research and observation baseline only:
@@ -42,7 +59,7 @@ Do not commit raw logs, private datasets, or configuration files. Use the reposi
 ## Intended Audience
 - Researchers and engineers building market observation, monitoring, or analytics tooling.
 - Organizations wanting a non-invasive observer tool to evaluate price behavior around internal events.
-- Educators and students studying real-time data handling and anonymized event patterns.
+- Educators and students studying real-time data handling and abstracted event patterns.
 - Development teams applying production-minded engineering practices to research systems.
 
 ## Core Purpose
@@ -52,7 +69,7 @@ The Market Behavior Observer:
 - Derives aggregated, normalized statistical metrics following each observation.
 - Observes and tracks subsequent price behavior patterns.
 - Maintains learning continuity across sessions through persistent storage.
-- Detects anonymized market events using fully abstracted logic (thresholds and decision parameters remain confidential).
+- Detects abstracted, structure-based market events using non-public logic (thresholds and decision parameters remain confidential).
 - Provides aggregated statistical summaries for human review.
 - Preserves intellectual property by design—never producing or exposing actionable trading signals.
 
@@ -65,12 +82,12 @@ The Market Behavior Observer:
 - All strategy or parameter decisions remain under human control.
 
 ### High-Level Architecture
-Market Data (CSV) → Event Observation (Anonymized) → Statistical Aggregation → Learning Persistence → Reporting / Delivery Layer
+Market Data (CSV) → Event Observation (Abstracted) → Statistical Aggregation → Learning Persistence → Reporting / Delivery Layer
 
 Pipeline components:
 1. Data Ingestion: Reads sanitized or mock market data from configured sources.
-2. Event Detection: Identifies anonymized events using internal (non-public) logic.
-3. Observation Recording: Captures sanitized observations with reference metrics.
+2. Event Detection: Identifies abstracted, structure-based market events using internal (non-public) logic.
+3. Observation Recording: Captures abstracted observations with reference metrics.
 4. Statistical Aggregation: Computes aggregated behavior metrics following observations.
 5. Persistence: Stores aggregated learning data for cross-session continuity.
 6. Reporting: Generates summaries and visualizations for analysts.
@@ -78,11 +95,16 @@ Pipeline components:
 
 ## What Is Demonstrated
 - Market observation architecture and modular dataflow design.
-- Event abstraction and anonymization patterns to protect IP.
+- Event abstraction and structure-based observation patterns to protect IP.
 - Persistent, aggregated research storage with sanitized outputs.
 - Extensible adapter patterns for notifications and delivery (email, Slack, Teams, REST APIs, databases).
 - Production-minded engineering practices applied to research systems.
 - Configuration-driven behavior without hardcoded thresholds.
+
+In practice, the system helps answer research questions such as:
+- Which market regimes exhibit the highest post-signal reversal rates?
+- Where partial favorable moves consistently give back gains?
+- How behavior differs across timeframes and alignment states?
 
 ## What Is Intentionally Abstracted
 To protect IP and prevent misuse, the repository does not include:
@@ -147,7 +169,7 @@ Best practice: Add a CI check to detect forbidden tokens or raw price fields bef
    - Do not commit real market data.
 5. Run the observer:
    - See the `docs/` directory for environment-specific run instructions.
-6. Interact with the CLI or UI to inspect anonymized observations and aggregated metrics.
+6. Interact with the CLI or UI to inspect abstracted observations and aggregated metrics.
 
 ## Configuration Example
 Refer to `config.example.json` for configuration structure:
@@ -160,7 +182,7 @@ Refer to `config.example.json` for configuration structure:
 Do not commit actual `config.json` or credentials.
 
 ## Integration Steps for Proprietary Systems
-1. Create an event stream adapter that emits anonymized events.
+1. Create an event stream adapter that emits abstracted events.
 2. Implement or configure a delivery adapter for your notification channel.
 3. Configure aggregation windows and methods to suit research needs.
 4. Run in isolation with governance controls.
@@ -216,3 +238,4 @@ For partnership or licensing inquiries, contact the maintainers with a brief use
 
 ## References
 [1] Market Behavior Observer documentation and design philosophy — research-only, non-trading system architecture for market analysis and pattern identification.
+```
